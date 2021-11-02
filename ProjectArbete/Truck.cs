@@ -5,7 +5,9 @@ using System.Text;
 
 namespace ProjectArbete
 {
-    public class Truck
+    public class Truck : Vehicle
     {
+        public string TruckBed { get; set; }
+        public int Weight { get; set; }
     }
 }

@@ -7,6 +7,7 @@ namespace ProjectArbete
 {
     public class Car : Vehicle
     {
-
+        public int NumberOfSeats { get; set; }
+        public bool Combi { get; set; }
     }
 }

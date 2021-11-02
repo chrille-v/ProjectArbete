@@ -7,5 +7,7 @@ namespace ProjectArbete
 {
     public class Moped : Vehicle
     {
+        public int Weight { get; set; }
+        public string Seats { get; set; }
     }
 }
