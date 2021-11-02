@@ -9,6 +9,7 @@ namespace ProjectArbete
             Console.WriteLine("Hej alla!");
             Console.WriteLine("Detta är ett nytt meddelande");
             Console.WriteLine("Ännu ett meddelande.");
+            Console.WriteLine("Viktor was here :)");
         }
     }
 }
