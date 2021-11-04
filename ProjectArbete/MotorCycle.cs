@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ProjectArbete
 {
-    public class MotorCycle
+    public class MotorCycle : Vehicle
     {
         public bool Passenger { get; set; }
         public int Weight { get; set; }
