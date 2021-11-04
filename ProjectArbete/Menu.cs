@@ -12,7 +12,6 @@ namespace ProjectArbete
         private static int choice;
 
         static Garage garage = new();
-        //static Car newCar = new();
 
         public static void Run()
         {
@@ -100,8 +99,6 @@ namespace ProjectArbete
                     break;
                 // search by type
                 case 6:
-                    garage.SearchVehicle();
-                    Console.ReadKey();
                     break;
 
                 default:

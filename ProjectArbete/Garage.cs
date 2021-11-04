@@ -24,29 +24,22 @@ namespace ProjectArbete
         {
             Console.WriteLine("These are the vehicles currently in the garage: ");
             
-            foreach (Car item in listOfVehicle)
+            foreach (var item in listOfVehicle)
             {
-                Console.WriteLine("Number of seats: {0}", item.NumberOfSeats);
-                Console.WriteLine("Is it combi: \t{0}", item.Combi);
+                //Console.WriteLine("Number of seats: {0}", item.NumberOfSeats);
+                //Console.WriteLine("Is it combi: \t{0}", item.Combi);
                 Console.WriteLine("Registration number: {0}", item.RegNumber);
                 Console.WriteLine("Color: \t \t{0}", item.Color);
                 Console.WriteLine("Brand: \t \t{0}", item.Brand);
-
-                Console.WriteLine();
-            }
-
-            foreach (Moped item in listOfVehicle)
-            {
-                Console.WriteLine("Class of moped: {0}", item.MopedClass);
-                Console.WriteLine("Number of seats: \t{0}", item.Seats);
-                Console.WriteLine("Registration number: {0}", item.RegNumber);
-                Console.WriteLine("Color: \t \t{0}", item.Color);
-                Console.WriteLine("Brand: \t \t{0}", item.Brand);
+                Console.WriteLine("Type: {0}", item.Type);
 
                 Console.WriteLine();
             }
         }
-
+        /// <summary>
+        /// List the different types of vehicles currently in 
+        /// the garage, and how many of each.
+        /// </summary>
         public void ListTypeVehicle()
         {
 
@@ -129,6 +122,21 @@ namespace ProjectArbete
             return number;
         }
 
+        public void ReadMotorCycle()
+        {
+
+        }
+
+        public void ReadTruck()
+        {
+
+        }
+
+        public void ReadBuss()
+        {
+
+        }
+
         public void ReadCar()
         {
             Console.WriteLine("Write registration number: ");
@@ -168,7 +176,7 @@ namespace ProjectArbete
             Console.WriteLine("Write registration number: ");
             newMoped.RegNumber = Console.ReadLine().ToLower();
 
-            Console.WriteLine("Enter class1 or class2 moped: ");
+            Console.WriteLine("Class1 or class2 moped: ");
             newMoped.MopedClass = Console.ReadLine().ToLower();
 
             Console.WriteLine("How many seats?");
@@ -177,7 +185,7 @@ namespace ProjectArbete
             Console.WriteLine("What color? ");
             newMoped.Color = Console.ReadLine().ToLower();
 
-            Console.WriteLine("Enter car brand:");
+            Console.WriteLine("Enter brand:");
             newMoped.Brand = Console.ReadLine().ToLower();
 
             listOfVehicle.Add(new Moped(newMoped.MopedClass, newMoped.Seats, newMoped.RegNumber, newMoped.Color, newMoped.Brand, "moped", 2));
