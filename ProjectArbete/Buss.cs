@@ -7,7 +7,7 @@ namespace ProjectArbete
 {
     public class Buss : Vehicle
     {
-        public int NumberOfSeats { get; set; }
+        public bool DubbelDecker { get; set; }
         public int NumbearOfTires { get; set; }
     }
 }

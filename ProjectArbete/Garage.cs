@@ -11,6 +11,7 @@ namespace ProjectArbete
         bool loop;
 
         public Car newCar = new();
+        public Moped newMoped = new();
 
         public List<Vehicle> listOfVehicle = new();
         public IEnumerator GetEnumerator()
@@ -53,6 +54,9 @@ namespace ProjectArbete
             int choice = ReadInt();
             switch (choice)
             {
+                case 1:
+
+                    break;
                 case 3:
                     ReadCar();
                     break;
@@ -146,6 +150,26 @@ namespace ProjectArbete
             }
 
             listOfVehicle.Add(new Car(newCar.NumberOfSeats, newCar.Combi, newCar.RegNumber, newCar.Color, newCar.Brand, "car", 4));
+        }
+
+        public void ReadMoped()
+        {
+            Console.WriteLine("Write registration number: ");
+            newMoped.RegNumber = Console.ReadLine();
+
+            Console.WriteLine("What is the weight?");
+            newMoped.Weight = ReadInt();
+
+            Console.WriteLine("How many seats?");
+            newMoped.Seats = ReadInt();
+
+            Console.WriteLine("What color? ");
+            newMoped.Color = Console.ReadLine();
+
+            Console.WriteLine("Enter car brand:");
+            newMoped.Brand = Console.ReadLine();
+
+            listOfVehicle.Add(new Moped(newMoped.Weight, newMoped.Seats, newMoped.RegNumber, newMoped.Color, newMoped.Brand, "moped", 2));
         }
     }
 }
