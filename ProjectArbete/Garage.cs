@@ -30,8 +30,16 @@ namespace ProjectArbete
                 Console.WriteLine("Registration number: {0}", item.RegNumber);
                 Console.WriteLine("Color: {0}", item.Color);
                 Console.WriteLine("Brand: {0}", item.Brand);
+
+                Console.WriteLine();
             }
         }
+
+        public void ListTypeVehicle()
+        {
+
+        }
+
         public void AddVehicle()
         {
             Console.WriteLine("What kind of vehicle would you like to add?" +
@@ -94,9 +102,9 @@ namespace ProjectArbete
             while (loop)
             {
                 int index = ReadInt();
-                if (index <= 0)
+                if (index - 1 < 0 || listOfVehicle == null)
                 {
-                    Console.WriteLine("There is no zero space in the garage. Please choose another spot.");
+                    Console.WriteLine("There is no vehicle at that spot");
                 }
                 else
                 {
@@ -106,6 +114,23 @@ namespace ProjectArbete
             }
         }
 
+        public void SearchVehicle()
+        {
+            Console.WriteLine("Search for type: ");
+            string nameSearch = Console.ReadLine();
+
+            var vehicle = listOfVehicle.Where(x => x.Type == nameSearch).ToList();
+
+            foreach (Vehicle item in vehicle)
+            {
+                Console.WriteLine("Registration number: {0}", item.RegNumber);
+                Console.WriteLine("Color: {0}", item.Color);
+                Console.WriteLine("Brand: {0}", item.Brand);
+
+                Console.WriteLine();
+            }
+        }
+        
         static int ReadInt()
         {
             int number;
