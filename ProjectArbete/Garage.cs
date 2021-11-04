@@ -8,7 +8,7 @@ namespace ProjectArbete
 {
     public class Garage : IEnumerable
     {
-        List<Vehicle> listOfVehicle = new();
+        public List<Vehicle> listOfVehicle = new();
         public IEnumerator GetEnumerator()
         {
             return listOfVehicle.GetEnumerator();
