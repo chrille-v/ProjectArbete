@@ -8,8 +8,7 @@ namespace ProjectArbete
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hej alla!");
-            Console.WriteLine("Viktor viktor din gamle skojare!");
+            Menu.Run();
         }
     }
 }

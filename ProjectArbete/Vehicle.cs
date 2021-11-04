@@ -7,7 +7,7 @@ namespace ProjectArbete
 {
     public class Vehicle
     {
-        public int RegNumber{ get; set; }
+        public string RegNumber{ get; set; }
         public string Color { get; set; }
         public string Brand { get; set; }
         public string Type { get; set; }
