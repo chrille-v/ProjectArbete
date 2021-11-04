@@ -7,7 +7,7 @@ namespace ProjectArbete
 {
     public class Moped : Vehicle
     {
-        public string WeightClass { get; set; }
+        private string mopedClass;
         private int seats;
 
         public Moped()
@@ -18,7 +18,7 @@ namespace ProjectArbete
         public Moped(string _weight, int _seats, string _regnumber, string _color, string _brand, string _type, int _nrTires) 
             : base(_regnumber, _color, _brand, _type, _nrTires)
         {
-            WeightClass = _weight;
+            MopedClass = _weight;
             Seats = _seats;
         }
 
@@ -34,6 +34,22 @@ namespace ProjectArbete
                 else
                 {
                     seats = 1;
+                }
+            }
+        }
+
+        public string MopedClass
+        {
+            get { return mopedClass; }
+            set
+            {
+                if (value == "Class1" || value == "Class2")
+                {
+                    mopedClass = value;
+                }
+                else
+                {
+                    mopedClass = "N/A";
                 }
             }
         }
