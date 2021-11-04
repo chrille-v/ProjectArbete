@@ -28,7 +28,6 @@ namespace ProjectArbete
             RegNumber = _regnumber;
             Color = _color;
             Brand = _brand;
-            
         }
     }
 }

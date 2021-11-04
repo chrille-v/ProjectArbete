@@ -25,12 +25,13 @@ namespace ProjectArbete
                 switch (choice)
                 {
                     case 1:
-                        AddVehicleToList();
+                        garage.AddVehicleToList();
                         break;
+
                     case 3:
                         SubMenu();
                         break;
-                    case 4:
+                    case 0:
                         Console.WriteLine("Thank you, now exiting the program!");
                         loop = false;
                         break;
@@ -64,53 +65,6 @@ namespace ProjectArbete
             return number;
         }
 
-        public static void AddVehicleToList()
-        {
-            Console.WriteLine("What kind of vehicle would you like to add?" +
-                "\n1. Moped " +
-                "\n2. Motorcycle " +
-                "\n3. Car " +
-                "\n4. Buss " +
-                "\n5. Truck");
-
-            int choice = ReadInt();
-            switch (choice)
-            {
-                case 3:
-                    // listOfVehicle
-                    Console.WriteLine("Add registrationnumber: ");
-                    newCar.RegNumber = Console.ReadLine();
-
-                    Console.WriteLine("Write car color: ");
-                    newCar.Color = Console.ReadLine();
-
-                    Console.WriteLine("Enter car brand:");
-                    newCar.Brand = Console.ReadLine();
-
-                    Console.WriteLine("Please enter number of seats: ");
-                    newCar.NumberOfSeats = ReadInt();
-
-                    Console.WriteLine("Is it a combi? y/n");
-                    string combi = Console.ReadLine();
-                    switch (combi)
-                    {
-                        case "y":
-                            newCar.Combi = true;
-                            break;
-
-                        case "n":
-                            newCar.Combi = false;
-                            break;
-                        default:
-                            Console.WriteLine("Please answer yes or no.");
-                            break;
-                    }
-
-
-                    break;
-                default:
-                    break;
-            }
-        }
+        
     }
 }
