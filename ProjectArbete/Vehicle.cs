@@ -17,14 +17,18 @@ namespace ProjectArbete
         {
 
         }
+        public Vehicle(string _type, int _nrTires)
+        {
+            Type = _type;
+            NumberOfTires = _nrTires;
+        }
 
-        public Vehicle(int _regnumber, string _color, string _brand, string _type, int _nrTires)
+        public Vehicle(string _regnumber, string _color, string _brand, string _type, int _nrTires) : this(_type, _nrTires)
         {
             RegNumber = _regnumber;
             Color = _color;
             Brand = _brand;
-            Type = _type;
-            NumberOfTires = _nrTires;
+            
         }
     }
 }

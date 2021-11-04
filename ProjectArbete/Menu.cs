@@ -11,7 +11,7 @@ namespace ProjectArbete
         private static bool loop;
 
         static Garage garage = new();
-        static Car newCar = new();
+        static Car newCar = new("car", 4);
 
         public static void Run()
         {
@@ -86,9 +86,6 @@ namespace ProjectArbete
 
                     Console.WriteLine("Enter car brand:");
                     newCar.Brand = Console.ReadLine();
-
-                    newCar.Type = "car";
-                    newCar.NumberOfTires = 4;
 
                     Console.WriteLine("Please enter number of seats: ");
                     newCar.NumberOfSeats = ReadInt();
