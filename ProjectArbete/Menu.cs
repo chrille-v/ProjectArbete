@@ -25,12 +25,22 @@ namespace ProjectArbete
                 switch (choice)
                 {
                     case 1:
-                        garage.AddVehicleToList();
+                        garage.AddVehicle();
+                        break;
+
+                    case 2:
+                        garage.RemoveVehicle();
                         break;
 
                     case 3:
                         SubMenu();
                         break;
+
+                    case 4:
+                        garage.ListVehicle();
+                        Console.ReadKey();
+                        break;
+
                     case 0:
                         Console.WriteLine("Thank you, now exiting the program!");
                         loop = false;
@@ -44,8 +54,8 @@ namespace ProjectArbete
         private static void PrintOutMenu()
         {
             Console.Clear();
-            Console.WriteLine("1. Park a new car " +
-                "\n2. Remove car from garage." +
+            Console.WriteLine("1. Park a new vehicle " +
+                "\n2. Remove vehicle from garage." +
                 "\n3. Search for vehicle " +
                 "\n4. Show all vehicles in garage" +
                 "\n0. Exit");
