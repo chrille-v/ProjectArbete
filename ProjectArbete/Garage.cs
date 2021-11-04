@@ -10,7 +10,7 @@ namespace ProjectArbete
     {
         bool loop;
 
-        public Car newCar = new("car", 4);
+        public Car newCar = new();
 
         public List<Vehicle> listOfVehicle = new();
         public IEnumerator GetEnumerator()
@@ -26,10 +26,10 @@ namespace ProjectArbete
             foreach (Car item in listOfVehicle)
             {
                 Console.WriteLine("Number of seats: {0}", item.NumberOfSeats);
-                Console.WriteLine("Is it combi: {0}", item.Combi);
+                Console.WriteLine("Is it combi: \t{0}", item.Combi);
                 Console.WriteLine("Registration number: {0}", item.RegNumber);
-                Console.WriteLine("Color: {0}", item.Color);
-                Console.WriteLine("Brand: {0}", item.Brand);
+                Console.WriteLine("Color: \t \t{0}", item.Color);
+                Console.WriteLine("Brand: \t \t{0}", item.Brand);
 
                 Console.WriteLine();
             }
@@ -54,36 +54,7 @@ namespace ProjectArbete
             switch (choice)
             {
                 case 3:
-                    Console.WriteLine("Write registration number: ");
-                    newCar.RegNumber = Console.ReadLine();
-
-                    Console.WriteLine("What color? ");
-                    newCar.Color = Console.ReadLine();
-
-                    Console.WriteLine("Enter car brand:");
-                    newCar.Brand = Console.ReadLine();
-
-                    Console.WriteLine("Please enter number of seats: ");
-                    newCar.NumberOfSeats = ReadInt();
-
-                    Console.WriteLine("Is it a combi? y/n");
-                    string combi = Console.ReadLine();
-
-                    switch (combi)
-                    {
-                        case "y":
-                            newCar.Combi = true;
-                            break;
-
-                        case "n":
-                            newCar.Combi = false;
-                            break;
-                        default:
-                            Console.WriteLine("Please answer yes or no.");
-                            break;
-                    }
-
-                    listOfVehicle.Add(new Car(newCar.NumberOfSeats, newCar.Combi, newCar.RegNumber, newCar.Color, newCar.Brand, "car", 4));
+                    ReadCar();
                     break;
 
                 case 0:
@@ -113,25 +84,27 @@ namespace ProjectArbete
                 }
             }
         }
-
+        /// <summary>
+        /// Searches Vehicles for reg.nr, and gives true or false.
+        /// </summary>
         public void SearchVehicle()
         {
-            Console.WriteLine("Search for type: ");
-            string nameSearch = Console.ReadLine();
+            Console.WriteLine("Search for registration number: ");
+            string searchRegNumber = Console.ReadLine();
 
-            var vehicle = listOfVehicle.Where(x => x.Type == nameSearch).ToList();
+            var result = listOfVehicle.Where(x => x.RegNumber == searchRegNumber).ToList();
 
-            foreach (Vehicle item in vehicle)
+            if (result != null)
             {
-                Console.WriteLine("Registration number: {0}", item.RegNumber);
-                Console.WriteLine("Color: {0}", item.Color);
-                Console.WriteLine("Brand: {0}", item.Brand);
-
-                Console.WriteLine();
+                Console.WriteLine("There is one vehicle with that registration number.");
+            }
+            else
+            {
+                Console.WriteLine("No vehicle with that registration number.");
             }
         }
         
-        static int ReadInt()
+        public int ReadInt()
         {
             int number;
             while (int.TryParse(Console.ReadLine(), out number) == false)
@@ -139,6 +112,40 @@ namespace ProjectArbete
                 Console.WriteLine("Not a valid option, please try again!");
             }
             return number;
+        }
+
+        public void ReadCar()
+        {
+            Console.WriteLine("Write registration number: ");
+            newCar.RegNumber = Console.ReadLine();
+
+            Console.WriteLine("What color? ");
+            newCar.Color = Console.ReadLine();
+
+            Console.WriteLine("Enter car brand:");
+            newCar.Brand = Console.ReadLine();
+
+            Console.WriteLine("Please enter number of seats: ");
+            newCar.NumberOfSeats = ReadInt();
+
+            Console.WriteLine("Is it a combi? y/n");
+            string combi = Console.ReadLine();
+
+            switch (combi)
+            {
+                case "y":
+                    newCar.Combi = true;
+                    break;
+
+                case "n":
+                    newCar.Combi = false;
+                    break;
+                default:
+                    Console.WriteLine("Please answer yes or no.");
+                    break;
+            }
+
+            listOfVehicle.Add(new Car(newCar.NumberOfSeats, newCar.Combi, newCar.RegNumber, newCar.Color, newCar.Brand, "car", 4));
         }
     }
 }

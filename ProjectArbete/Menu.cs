@@ -12,7 +12,7 @@ namespace ProjectArbete
         private static int choice;
 
         static Garage garage = new();
-        static Car newCar = new("car", 4);
+        //static Car newCar = new();
 
         public static void Run()
         {
@@ -83,6 +83,8 @@ namespace ProjectArbete
             {
                 // registration number
                 case 1:
+                    garage.SearchVehicle();
+                    Console.ReadKey();
                     break;
                 // Color
                 case 2:
