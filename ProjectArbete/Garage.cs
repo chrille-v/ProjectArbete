@@ -6,20 +6,24 @@ using System.Text;
 
 namespace ProjectArbete
 {
-    public class Garage : IEnumerable
+    public class Garage : IEnumerable<Vehicle>
     {
         bool loop;
 
         public Car newCar = new();
         public Moped newMoped = new();
 
-        public List<Vehicle> listOfVehicle = new();
-        public IEnumerator GetEnumerator()
+        public IEnumerator<Vehicle> GetEnumerator()
         {
-            return listOfVehicle.GetEnumerator();
-            throw new NotImplementedException();
+            return ((IEnumerable<Vehicle>)listOfVehicle).GetEnumerator();
         }
 
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return ((IEnumerable)listOfVehicle).GetEnumerator();
+        }
+
+        public List<Vehicle> listOfVehicle = new();
         public void ListVehicle()
         {
             Console.WriteLine("These are the vehicles currently in the garage: ");
@@ -45,34 +49,6 @@ namespace ProjectArbete
 
         }
 
-        public void AddVehicle()
-        {
-            Console.WriteLine("What kind of vehicle would you like to add?" +
-                "\n1. Moped " +
-                "\n2. Motorcycle " +
-                "\n3. Car " +
-                "\n4. Buss " +
-                "\n5. Truck " +
-                "\n0. Go back");
-
-            int choice = ReadInt();
-            switch (choice)
-            {
-                case 1:
-                    ReadMoped();
-                    break;
-                case 3:
-                    ReadCar();
-                    break;
-
-                case 0:
-                    break;
-
-                default:
-                    break;
-            }
-        }
-
         public void RemoveVehicle()
         {
             Console.WriteLine("Please enter the space(index) you would like to empty.");
@@ -95,23 +71,26 @@ namespace ProjectArbete
         /// <summary>
         /// Searches Vehicles for reg.nr, and gives true or false.
         /// </summary>
-        public void SearchVehicle()
+        public bool SearchVehicle()
         {
-            Console.WriteLine("Search for registration number: ");
+            Console.WriteLine("Search for registration number to see if that vehicle is parked in the garage ");
             string searchRegNumber = Console.ReadLine();
 
-            var result = listOfVehicle.Where(x => x.RegNumber == searchRegNumber).ToList();
+            //var result = listOfVehicle.Where(x => x.RegNumber == searchRegNumber).ToList();
+            bool result = listOfVehicle.Any(x => x.RegNumber == searchRegNumber);
 
-            if (result != null)
+            if (result)
             {
-                Console.WriteLine("There is one vehicle with that registration number.");
+                Console.WriteLine("{0} There is one vehicle with that registration number.", result.ToString());
+                return true;
             }
             else
             {
-                Console.WriteLine("No vehicle with that registration number.");
+                Console.WriteLine("{0} No such vehicle in the garage. ", result.ToString());
+                return false;
             }
         }
-        
+
         public int ReadInt()
         {
             int number;

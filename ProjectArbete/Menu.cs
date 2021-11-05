@@ -11,7 +11,7 @@ namespace ProjectArbete
         private static bool loop;
         private static int choice;
 
-        static Garage garage = new();
+        readonly static Garage garage = new();
 
         public static void Run()
         {
@@ -25,7 +25,7 @@ namespace ProjectArbete
                 switch (choice)
                 {
                     case 1:
-                        garage.AddVehicle();
+                        AddVehicle();
                         break;
 
                     case 2:
@@ -82,7 +82,7 @@ namespace ProjectArbete
             {
                 // registration number
                 case 1:
-                    garage.SearchVehicle();
+                    Console.WriteLine(garage.SearchVehicle());
                     Console.ReadKey();
                     break;
                 // Color
@@ -116,6 +116,32 @@ namespace ProjectArbete
             return number;
         }
 
-        
+        public static void AddVehicle()
+        {
+            Console.WriteLine("What kind of vehicle would you like to add?" +
+                "\n1. Moped " +
+                "\n2. Motorcycle " +
+                "\n3. Car " +
+                "\n4. Buss " +
+                "\n5. Truck " +
+                "\n0. Go back");
+
+            int choice = ReadInt();
+            switch (choice)
+            {
+                case 1:
+                    garage.ReadMoped();
+                    break;
+                case 3:
+                    garage.ReadCar();
+                    break;
+
+                case 0:
+                    break;
+
+                default:
+                    break;
+            }
+        }
     }
 }
