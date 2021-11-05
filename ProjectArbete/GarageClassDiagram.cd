@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ProjectArbete.Garage">
-    <Position X="2.25" Y="1" Width="1.5" />
+    <Position X="1.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAMAAAAIAAAABACASAQAIAAAAAEAAAEAAMAAAAAAQA=</HashCode>
       <FileName>Garage.cs</FileName>
@@ -9,56 +9,56 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ProjectArbete.Vehicle">
-    <Position X="6" Y="1" Width="1.5" />
+    <Position X="3.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAwAAgAABAAA=</HashCode>
       <FileName>Vehicle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.Moped">
-    <Position X="4" Y="7" Width="1.75" />
+    <Position X="5.25" Y="8" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAgAgAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Moped.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.Car">
-    <Position X="4.5" Y="4.25" Width="1.75" />
+    <Position X="0.75" Y="8" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AABAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Car.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.Truck">
-    <Position X="6.25" Y="7.25" Width="1.75" />
+    <Position X="7.75" Y="8.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAACAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Truck.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.MotorCycle">
-    <Position X="8.5" Y="7" Width="1.75" />
+    <Position X="10.5" Y="8" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAAAAAAgAAAAIAAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>MotorCycle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.Buss">
-    <Position X="7.5" Y="4.25" Width="1.75" />
+    <Position X="3" Y="8" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Buss.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.Menu">
-    <Position X="12.5" Y="1" Width="1.5" />
+    <Position X="7.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAABAAACAAAAAJQAAAIAAAAAQAAAgAAAAAAAAI=</HashCode>
       <FileName>Menu.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="ProjectArbete.IVehicle">
-    <Position X="8" Y="1" Width="1.5" />
+    <Position X="5.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAAAAAAAAAAAAIAAAAAAAAAAAgEAAAAAAAA=</HashCode>
       <FileName>IVehicle.cs</FileName>
