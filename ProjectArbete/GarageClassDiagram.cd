@@ -51,9 +51,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.Menu">
-    <Position X="10.5" Y="1" Width="1.5" />
+    <Position X="12.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAACAAAAAJQAAAIAAAAAQAAAgAAAAAAAAI=</HashCode>
+      <HashCode>QAAAAAAABAAACAAAAAJQAAAIAAAAAQAAAgAAAAAAAAI=</HashCode>
       <FileName>Menu.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -62,6 +62,13 @@
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAAAAAAAAAAAAIAAAAAAAAAAAgEAAAAAAAA=</HashCode>
       <FileName>IVehicle.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ProjectArbete.IReadInt">
+    <Position X="10.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IReadInt.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
