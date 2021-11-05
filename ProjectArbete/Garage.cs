@@ -8,8 +8,6 @@ namespace ProjectArbete
 {
     public class Garage : IEnumerable<Vehicle>
     {
-        bool loop;
-
         public Car newCar = new();
         public Moped newMoped = new();
         public MotorCycle motorBike = new();
@@ -54,20 +52,8 @@ namespace ProjectArbete
         {
             Console.WriteLine("Please enter the space(index) you would like to empty.");
 
-            loop = true;
-            while (loop)
-            {
-                int index = ReadInt();
-                if (index - 1 < 0 || listOfVehicle == null)
-                {
-                    Console.WriteLine("There is no vehicle at that spot");
-                }
-                else
-                {
-                    listOfVehicle.RemoveAt(index - 1);
-                    loop = false;
-                }
-            }
+            int index = ReadInt();
+            listOfVehicle.RemoveAt(index -1);
         }
         /// <summary>
         /// Searches Vehicles for reg.nr, and gives true or false.
@@ -92,7 +78,7 @@ namespace ProjectArbete
             }
         }
 
-        public int ReadInt()
+        public static int ReadInt()
         {
             int number;
             while (int.TryParse(Console.ReadLine(), out number) == false)
