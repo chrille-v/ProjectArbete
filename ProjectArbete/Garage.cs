@@ -12,6 +12,7 @@ namespace ProjectArbete
 
         public Car newCar = new();
         public Moped newMoped = new();
+        public MotorCycle motorBike = new();
 
         public IEnumerator<Vehicle> GetEnumerator()
         {
@@ -103,7 +104,22 @@ namespace ProjectArbete
 
         public void ReadMotorCycle()
         {
+            Console.WriteLine("Write registration number: ");
+            motorBike.RegNumber = Console.ReadLine().ToLower();
 
+            Console.WriteLine("Light, middle or heavy motorcyle? ");
+            motorBike.WeightClass = Console.ReadLine().ToLower();
+
+            Console.WriteLine("How many seats?");
+            motorBike.Seats = ReadInt();
+
+            Console.WriteLine("What color? ");
+            motorBike.Color = Console.ReadLine().ToLower();
+
+            Console.WriteLine("Enter brand:");
+            motorBike.Brand = Console.ReadLine().ToLower();
+
+            listOfVehicle.Add(new MotorCycle(motorBike.WeightClass, motorBike.Seats, motorBike.RegNumber, motorBike.Color, motorBike.Brand, "motorcycle", 2));
         }
 
         public void ReadTruck()

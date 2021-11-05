@@ -121,7 +121,7 @@ namespace ProjectArbete
             return number;
         }
 
-        public static void AddVehicleMenu()
+        public static void AddVehicle()
         {
             Console.WriteLine("What kind of vehicle would you like to add?" +
                 "\n1. Moped " +
