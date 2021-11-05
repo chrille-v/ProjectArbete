@@ -3,7 +3,7 @@
   <Class Name="ProjectArbete.Garage">
     <Position X="2.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAMAAAAIAAACBACASAQAIAAAAAEAAAEAAMAAAAAAQA=</HashCode>
+      <HashCode>QAAMAAAAIAAAABACASAQAIAAAAAEAAAEAAMAAAAAAQA=</HashCode>
       <FileName>Garage.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -16,44 +16,44 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.Moped">
-    <Position X="4" Y="7" Width="1.5" />
+    <Position X="4" Y="7" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAgAgAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Moped.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.Car">
-    <Position X="4.5" Y="4" Width="1.5" />
+    <Position X="4.5" Y="4.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AABAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Car.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.Truck">
-    <Position X="7.75" Y="4" Width="1.5" />
+    <Position X="6.25" Y="7.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Truck.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.MotorCycle">
-    <Position X="8.5" Y="7" Width="1.5" />
+    <Position X="8.5" Y="7" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAAAAAAgAAAAIAAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>MotorCycle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.Buss">
-    <Position X="6.25" Y="7" Width="1.5" />
+    <Position X="7.5" Y="4.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Buss.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.Menu">
     <Position X="12.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAABAAACAAAAAJQAAAIAAAAAQAAAgAAAAAAAAI=</HashCode>
+      <HashCode>AAAAAAAABAAACAAAAAJQAAAIAAAAAQAAAgAAAAAAAAI=</HashCode>
       <FileName>Menu.cs</FileName>
     </TypeIdentifier>
   </Class>
