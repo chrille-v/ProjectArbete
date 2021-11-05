@@ -64,12 +64,5 @@
       <FileName>IVehicle.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ProjectArbete.IReadInt">
-    <Position X="10.5" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IReadInt.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

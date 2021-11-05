@@ -12,7 +12,6 @@ namespace ProjectArbete
         private static int choice;
 
         readonly static Garage garage = new();
-        readonly static Moped newMoped = new();
 
         public static void Run()
         {
@@ -136,7 +135,11 @@ namespace ProjectArbete
             switch (choice)
             {
                 case 1:
-                    newMoped.ReadMoped();
+                    garage.ReadMoped();
+                    break;
+
+                case 2:
+                    garage.ReadMotorCycle();
                     break;
                 case 3:
                     garage.ReadCar();
