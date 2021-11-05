@@ -41,6 +41,11 @@ namespace ProjectArbete
                         Console.ReadKey();
                         break;
 
+                    case 5:
+                        garage.ListTypeVehicle();
+                        Console.ReadKey();
+                        break;
+
                     case 0:
                         Console.WriteLine("Thank you, now exiting the program!");
                         loop = false;
@@ -116,7 +121,7 @@ namespace ProjectArbete
             return number;
         }
 
-        public static void AddVehicle()
+        public static void AddVehicleMenu()
         {
             Console.WriteLine("What kind of vehicle would you like to add?" +
                 "\n1. Moped " +

@@ -3,7 +3,7 @@
   <Class Name="ProjectArbete.Garage">
     <Position X="2.75" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAMAAAAAAAACBAAAQAQAIAAAAAAAAAAAgMAAAAAAQA=</HashCode>
+      <HashCode>QAAMAAAAIAAACBACAQAQAIAAAAAEAAAEAAMAAAAAAQA=</HashCode>
       <FileName>Garage.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -18,7 +18,7 @@
   <Class Name="ProjectArbete.Moped">
     <Position X="4" Y="7" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAAAAgAgAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Moped.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -30,30 +30,30 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.Truck">
-    <Position X="8.25" Y="3.75" Width="1.5" />
+    <Position X="7.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Truck.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.MotorCycle">
-    <Position X="8.5" Y="6.75" Width="1.5" />
+    <Position X="8.5" Y="7" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAACAAAAAAAAAAAAAAIAA=</HashCode>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAAAAA=</HashCode>
       <FileName>MotorCycle.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.Buss">
     <Position X="6.25" Y="7" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
       <FileName>Buss.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.Menu">
     <Position X="10.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAABAAACAAAAAJQAAAIAAAAAQAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AAAAAAAABAAACAAAAAJwAAAIAAAAAQAAAAAAAAAAAAI=</HashCode>
       <FileName>Menu.cs</FileName>
     </TypeIdentifier>
   </Class>

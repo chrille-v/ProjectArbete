@@ -7,8 +7,13 @@ namespace ProjectArbete
 {
     public class MotorCycle : Vehicle
     {
-        public bool Passenger { get; set; }
-        public int Weight { get; set; }
-        public bool Chopper { get; set; }
+        private int weight;
+        private int passengers;
+        
+        public int Weight
+        {
+            get { return weight; }
+            set { }
+        }
     }
 }
