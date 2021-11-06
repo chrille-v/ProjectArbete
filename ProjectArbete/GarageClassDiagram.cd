@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ProjectArbete.Garage">
-    <Position X="1.75" Y="3" Width="1.5" />
+    <Position X="1.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAMAAAAIAAAABACASAQAIAAAAAEAAAEAAMAAAAAAQA=</HashCode>
+      <HashCode>QAAMEAAAIAAAABBCASAQAIAAAAAEAAAEAAMAAAAAAQA=</HashCode>
       <FileName>Garage.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

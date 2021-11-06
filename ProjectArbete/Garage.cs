@@ -11,6 +11,8 @@ namespace ProjectArbete
         public Car newCar = new();
         public Moped newMoped = new();
         public MotorCycle motorBike = new();
+        public Truck truck = new();
+        public Buss buss = new();
 
         public IEnumerator<Vehicle> GetEnumerator()
         {
@@ -55,11 +57,11 @@ namespace ProjectArbete
             int trucks = listOfVehicle.Count(x => x.Type == "truck");
             int busses = listOfVehicle.Count(x => x.Type == "buss");
 
-            Console.WriteLine("Mopeds: {0}", cars);
-            Console.WriteLine("Motorcycles: {0}", cars);
+            Console.WriteLine("Mopeds: {0}", mopeds);
+            Console.WriteLine("Motorcycles: {0}", motorcycles);
             Console.WriteLine("Cars: {0}", cars);
-            Console.WriteLine("Trucks: {0}", cars);
-            Console.WriteLine("Busses: {0}", cars);
+            Console.WriteLine("Trucks: {0}", trucks);
+            Console.WriteLine("Busses: {0}", busses);
         }
 
         public void RemoveVehicle()
@@ -124,12 +126,70 @@ namespace ProjectArbete
 
         public void ReadTruck()
         {
+            Console.WriteLine("Write registration number: ");
+            truck.RegNumber = Console.ReadLine();
 
+            Console.WriteLine("What color? ");
+            truck.Color = Console.ReadLine();
+
+            Console.WriteLine("Enter brand:");
+            truck.Brand = Console.ReadLine();
+
+            Console.WriteLine("Please enter weightclass: light/middl/heavy");
+            truck.WeightClass = Console.ReadLine();
+
+            Console.WriteLine("Does it have a truckbed? y/n");
+            string truckBed = Console.ReadLine();
+
+            switch (truckBed)
+            {
+                case "y":
+                    truck.TruckBed = true;
+                    break;
+
+                case "n":
+                    truck.TruckBed = false;
+                    break;
+                default:
+                    Console.WriteLine("Please answer yes or no.");
+                    break;
+            }
+
+            listOfVehicle.Add(new Truck(truck.WeightClass, truck.TruckBed, truck.RegNumber, truck.Color, truck.Brand, "truck", 4));
         }
 
         public void ReadBuss()
         {
+            Console.WriteLine("Write registration number: ");
+            buss.RegNumber = Console.ReadLine();
 
+            Console.WriteLine("What color? ");
+            buss.Color = Console.ReadLine();
+
+            Console.WriteLine("Enter car brand:");
+            buss.Brand = Console.ReadLine();
+
+            Console.WriteLine("Is it a dubbeldecker?");
+            string dubbelDecker = Console.ReadLine();
+
+            switch (dubbelDecker)
+            {
+                case "y":
+                    buss.DubbelDecker = true;
+                    break;
+
+                case "n":
+                    buss.DubbelDecker = false;
+                    break;
+                default:
+                    Console.WriteLine("Please answer yes or no.");
+                    break;
+            }
+
+            Console.WriteLine("Number of seats: ");
+            buss.Seats = ReadInt();
+
+            listOfVehicle.Add(new Buss(buss.DubbelDecker, buss.Seats, buss.RegNumber, buss.Color, buss.Brand, "buss", 8));
         }
 
         public void ReadCar()
