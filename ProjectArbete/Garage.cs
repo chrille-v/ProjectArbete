@@ -50,8 +50,16 @@ namespace ProjectArbete
             Console.WriteLine("Vehicles currently in the garage: {0}", totalVehicles);
 
             int cars = listOfVehicle.Count(x => x.Type == "car");
+            int mopeds = listOfVehicle.Count(x => x.Type == "moped");
+            int motorcycles = listOfVehicle.Count(x => x.Type == "motorcycle");
+            int trucks = listOfVehicle.Count(x => x.Type == "truck");
+            int busses = listOfVehicle.Count(x => x.Type == "buss");
 
+            Console.WriteLine("Mopeds: {0}", cars);
+            Console.WriteLine("Motorcycles: {0}", cars);
             Console.WriteLine("Cars: {0}", cars);
+            Console.WriteLine("Trucks: {0}", cars);
+            Console.WriteLine("Busses: {0}", cars);
         }
 
         public void RemoveVehicle()
