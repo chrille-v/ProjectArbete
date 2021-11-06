@@ -59,22 +59,25 @@ namespace ProjectArbete
         private static void PrintOutMenu()
         {
             Console.Clear();
+            Console.WriteLine("============= The Garage ===============\n");
             Console.WriteLine("1. Park a new vehicle " +
                 "\n2. Remove vehicle from garage." +
                 "\n3. Search for vehicle " +
                 "\n4. Show all vehicles in garage" +
                 "\n5. List types of vehicles." +
-                "\n0. Exit");
+                "\n0. Exit\n");
+            Console.WriteLine("=======================================");
         }
         private static void PrintSubMenu()
         {
+            Console.Clear();
+            Console.WriteLine("========= Search Garage ==========");
             Console.WriteLine("Find a vehicle in the garage by adding a parameter." + 
                 "\n1. To find with a registration number." +
                 "\n2. To find all with colour." +
                 "\n3. To find all with a specified number of wheels." + 
                 "\n4. To find all with a max number of passengers."+ 
                 "\n5. To find all with combi" +
-                "\n6. Search by type " +
                 "\n0. Exit");
             
             SubMenu();
@@ -102,9 +105,6 @@ namespace ProjectArbete
                     break;
                 // Search by feature
                 case 5:
-                    break;
-                // search by type
-                case 6:
                     break;
 
                 default:

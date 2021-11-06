@@ -69,7 +69,17 @@ namespace ProjectArbete
             Console.WriteLine("Please enter the space(index) you would like to empty.");
 
             int index = ReadInt();
-            listOfVehicle.RemoveAt(index -1);
+
+            if (index <= 0)
+            {
+                Console.WriteLine("No such space");
+                Console.ReadLine();
+            }
+            else
+            {
+                listOfVehicle.RemoveAt(index - 1);
+            }
+            
         }
         /// <summary>
         /// Searches Vehicles for reg.nr, and gives true or false.
