@@ -12,6 +12,7 @@ namespace ProjectArbete
         private static int choice;
 
         readonly static Garage garage = new();
+        readonly static Vehicle newVehicle = new();
 
         public static void Run()
         {
@@ -97,12 +98,32 @@ namespace ProjectArbete
                     break;
                 // Color
                 case 2:
+                    garage.SearchColor();
                     break;
+                    
                 // number of wheels
                 case 3:
+                    Console.WriteLine("Enter number of wheels: ");
+                    int wheels = ReadInt();
+                    var byWheels = garage.listOfVehicle.Where(x => x.NumberOfTires == wheels);
+
+                    foreach (var item in byWheels)
+                    {
+                        Console.WriteLine("Reg. number: {0}", item.RegNumber);
+                    }
+                    Console.ReadKey();
                     break;
-                // number of passengers
+                // search brand
                 case 4:
+                    Console.WriteLine("Brand: ");
+                    string brand = Console.ReadLine();
+                    var byBrand = garage.listOfVehicle.Where(x => x.Brand == brand);
+
+                    foreach (var item in byBrand)
+                    {
+                        Console.WriteLine("Reg. number: {0}", item.RegNumber);
+                    }
+                    Console.ReadKey();
                     break;
                 // Search by feature
                 case 5:
@@ -145,6 +166,14 @@ namespace ProjectArbete
                     break;
                 case 3:
                     garage.ReadCar();
+                    break;
+
+                case 4:
+                    garage.ReadBuss();
+                    break;
+
+                case 5:
+                    garage.ReadTruck();
                     break;
 
                 case 0:

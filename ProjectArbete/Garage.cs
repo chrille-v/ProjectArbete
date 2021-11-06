@@ -33,10 +33,10 @@ namespace ProjectArbete
             {
                 //Console.WriteLine("Number of seats: {0}", item.NumberOfSeats);
                 //Console.WriteLine("Is it combi: \t{0}", item.Combi);
-                Console.WriteLine("Registration number: {0}", item.RegNumber);
+                Console.WriteLine("Reg number: \t{0}", item.RegNumber);
                 Console.WriteLine("Color: \t \t{0}", item.Color);
                 Console.WriteLine("Brand: \t \t{0}", item.Brand);
-                Console.WriteLine("Type: {0}", item.Type);
+                Console.WriteLine("Type: \t \t{0}", item.Type);
 
                 Console.WriteLine();
             }
@@ -51,14 +51,16 @@ namespace ProjectArbete
 
             Console.WriteLine("Vehicles currently in the garage: {0}", totalVehicles);
 
-            int cars = listOfVehicle.Count(x => x.Type == "car");
             int mopeds = listOfVehicle.Count(x => x.Type == "moped");
             int motorcycles = listOfVehicle.Count(x => x.Type == "motorcycle");
+
+            int cars = listOfVehicle.Count(x => x.Type == "car");
             int trucks = listOfVehicle.Count(x => x.Type == "truck");
             int busses = listOfVehicle.Count(x => x.Type == "buss");
 
             Console.WriteLine("Mopeds: {0}", mopeds);
             Console.WriteLine("Motorcycles: {0}", motorcycles);
+
             Console.WriteLine("Cars: {0}", cars);
             Console.WriteLine("Trucks: {0}", trucks);
             Console.WriteLine("Busses: {0}", busses);
@@ -102,6 +104,19 @@ namespace ProjectArbete
                 Console.WriteLine("{0} No such vehicle in the garage. ", result.ToString());
                 return false;
             }
+        }
+
+        public void SearchColor()
+        {
+            Console.WriteLine("Enter color: ");
+            string color = Console.ReadLine();
+            var byColor = listOfVehicle.Where(x => x.Color == color);
+
+            foreach (var item in byColor)
+            {
+                Console.WriteLine("Reg. number: {0}", item.RegNumber);
+            }
+            Console.ReadKey();
         }
 
         public static int ReadInt()
