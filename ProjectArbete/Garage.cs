@@ -106,19 +106,6 @@ namespace ProjectArbete
             }
         }
 
-        public void SearchColor()
-        {
-            Console.WriteLine("Enter color: ");
-            string color = Console.ReadLine();
-            var byColor = listOfVehicle.Where(x => x.Color == color);
-
-            foreach (var item in byColor)
-            {
-                Console.WriteLine("Reg. number: {0}", item.RegNumber);
-            }
-            Console.ReadKey();
-        }
-
         public static int ReadInt()
         {
             int number;
@@ -160,7 +147,7 @@ namespace ProjectArbete
             Console.WriteLine("Enter brand:");
             truck.Brand = Console.ReadLine();
 
-            Console.WriteLine("Please enter weightclass: light/middl/heavy");
+            Console.WriteLine("Please enter weightclass: light/middle/heavy");
             truck.WeightClass = Console.ReadLine();
 
             Console.WriteLine("Does it have a truckbed? y/n");
@@ -191,7 +178,7 @@ namespace ProjectArbete
             Console.WriteLine("What color? ");
             buss.Color = Console.ReadLine();
 
-            Console.WriteLine("Enter car brand:");
+            Console.WriteLine("Enter brand:");
             buss.Brand = Console.ReadLine();
 
             Console.WriteLine("Is it a dubbeldecker?");
@@ -231,7 +218,7 @@ namespace ProjectArbete
             Console.WriteLine("Please enter number of seats: ");
             newCar.NumberOfSeats = ReadInt();
 
-            Console.WriteLine("Is it a combi? y/n");
+            Console.WriteLine("Is it a station wagon? y/n");
             string combi = Console.ReadLine();
 
             switch (combi)

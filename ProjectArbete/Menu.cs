@@ -98,7 +98,15 @@ namespace ProjectArbete
                     break;
                 // Color
                 case 2:
-                    garage.SearchColor();
+                    Console.WriteLine("Enter color: ");
+                    string color = Console.ReadLine();
+                    var byColor = garage.listOfVehicle.Where(x => x.Color == color);
+
+                    foreach (var item in byColor)
+                    {
+                        Console.WriteLine("Reg. number: {0} \n Type: {1}", item.RegNumber, item.Type);
+                    }
+                    Console.ReadKey();
                     break;
                     
                 // number of wheels
@@ -109,7 +117,7 @@ namespace ProjectArbete
 
                     foreach (var item in byWheels)
                     {
-                        Console.WriteLine("Reg. number: {0}", item.RegNumber);
+                        Console.WriteLine("Reg. number: {0} \n Type: {1}", item.RegNumber, item.Type);
                     }
                     Console.ReadKey();
                     break;
@@ -121,7 +129,7 @@ namespace ProjectArbete
 
                     foreach (var item in byBrand)
                     {
-                        Console.WriteLine("Reg. number: {0}", item.RegNumber);
+                        Console.WriteLine("Reg. number: {0} \n Type: {1}", item.Brand, item.Type);
                     }
                     Console.ReadKey();
                     break;
