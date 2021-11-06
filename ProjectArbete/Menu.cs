@@ -63,6 +63,7 @@ namespace ProjectArbete
                 "\n2. Remove vehicle from garage." +
                 "\n3. Search for vehicle " +
                 "\n4. Show all vehicles in garage" +
+                "\n5. List types of vehicles." +
                 "\n0. Exit");
         }
         private static void PrintSubMenu()
