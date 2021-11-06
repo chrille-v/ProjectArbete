@@ -59,13 +59,13 @@ namespace ProjectArbete
         private static void PrintOutMenu()
         {
             Console.Clear();
-            Console.WriteLine("============= The Garage ===============\n");
+            Console.WriteLine("============= The Garage ===============");
             Console.WriteLine("1. Park a new vehicle " +
                 "\n2. Remove vehicle from garage." +
                 "\n3. Search for vehicle " +
                 "\n4. Show all vehicles in garage" +
                 "\n5. List types of vehicles." +
-                "\n0. Exit\n");
+                "\n0. Exit");
             Console.WriteLine("=======================================");
         }
         private static void PrintSubMenu()
@@ -81,6 +81,7 @@ namespace ProjectArbete
                 "\n0. Exit");
             
             SubMenu();
+            Console.WriteLine("=======================================");
         }
 
         private static void SubMenu()
