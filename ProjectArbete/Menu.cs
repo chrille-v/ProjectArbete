@@ -142,10 +142,10 @@ namespace ProjectArbete
 
                     foreach (var item in garage.listOfVehicle)
                     {
-                        Car car2 = item as Car;
-                        if (car2 != null)
+                        //Car car2 = item as Car;
+                        if (item is Car car2)
                         {
-                            Console.WriteLine("Reg. number: {0} \nType: {1} \nBrand:{2}", item.Brand, item.Type, item.Brand);
+                            Console.WriteLine("Reg. number: {0} \nType: {1} \nBrand:{2}", item.RegNumber, item.Type, item.Brand);
                             Console.WriteLine();
                         }
                     }
@@ -157,8 +157,8 @@ namespace ProjectArbete
 
                     foreach (var item in garage.listOfVehicle)
                     {
-                        Truck truck2 = item as Truck;
-                        if (truck2 != null)
+                        //Truck truck2 = item as Truck;
+                        if (item is Truck truck2)
                         {
                             Console.WriteLine("Reg. number: {0} \nType: {1} \nBrand:{2}", item.Brand, item.Type, item.Brand);
                             Console.WriteLine();

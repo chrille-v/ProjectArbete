@@ -116,7 +116,7 @@ namespace ProjectArbete
             
         }
         /// <summary>
-        /// Searches Vehicles for reg.nr, and gives true or false.
+        /// Searches Vehicles for reg.nr.
         /// </summary>
         public void SearchVehicle()
         {
