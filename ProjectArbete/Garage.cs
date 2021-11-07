@@ -29,10 +29,40 @@ namespace ProjectArbete
         {
             Console.WriteLine("These are the vehicles currently in the garage: ");
             
-            foreach (var item in listOfVehicle)
+            foreach (IVehicle item in listOfVehicle)
             {
-                //Console.WriteLine("Number of seats: {0}", item.NumberOfSeats);
-                //Console.WriteLine("Is it combi: \t{0}", item.Combi);
+                // Pattern matching or 'as' with null check? 
+                //Car car2 = item as Car;
+                if (item is Car car2)
+                {
+                    Console.WriteLine("Station wagon: {0}", car2.Combi.ToString());
+                    Console.WriteLine("Seats: \t \t{0}", car2.NumberOfSeats);
+                }
+
+                if (item is Moped moped2)
+                {
+                    Console.WriteLine("Moped class: {0}", moped2.MopedClass);
+                    Console.WriteLine("Seats: \t \t{0}", moped2.Seats);
+                }
+
+                if (item is MotorCycle motorCycle2)
+                {
+                    Console.WriteLine("Seats: {0}", motorCycle2.Seats);
+                    Console.WriteLine("Weight class: {0}", motorCycle2.WeightClass);
+                }
+
+                if (item is Truck truck2)
+                {
+                    Console.WriteLine("Weight class: {0}", truck2.WeightClass);
+                    Console.WriteLine("Truck bed: {0}", truck2.TruckBed);
+                }
+
+                if (item is Buss buss2)
+                {
+                    Console.WriteLine("Dubbel decker: {0}", buss2.DubbelDecker);
+                    Console.WriteLine("Seats: {0}", buss2.Seats);
+                }
+
                 Console.WriteLine("Reg number: \t{0}", item.RegNumber);
                 Console.WriteLine("Color: \t \t{0}", item.Color);
                 Console.WriteLine("Brand: \t \t{0}", item.Brand);
