@@ -3,7 +3,7 @@
   <Class Name="ProjectArbete.Garage">
     <Position X="1.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAMEAQAIAAAABBCASAQAIAAAAAEAAAEAAMAAAAAAQA=</HashCode>
+      <HashCode>QAAMEAAAIAAAABBCASAQAIAAAAAEAAAEAAMAAAAAAQA=</HashCode>
       <FileName>Garage.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -53,7 +53,7 @@
   <Class Name="ProjectArbete.Menu">
     <Position X="7.25" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAACAAAAAJSAAAIAAAAAQAAAgAAAAAAAAI=</HashCode>
+      <HashCode>AAAAAAAABAAACAAAAAJQAAAIAAAAAQAAAgAAAAAAAAI=</HashCode>
       <FileName>Menu.cs</FileName>
     </TypeIdentifier>
   </Class>
