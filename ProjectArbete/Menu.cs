@@ -150,6 +150,7 @@ namespace ProjectArbete
                             Console.WriteLine();
                         }
                     }
+                    Console.ReadKey();
                     break;
 
                 case 6:
@@ -164,6 +165,7 @@ namespace ProjectArbete
                             Console.WriteLine();
                         }
                     }
+                    Console.ReadKey();
                     break;
 
                 default:
