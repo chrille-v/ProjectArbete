@@ -102,7 +102,7 @@ namespace ProjectArbete
         {
             Console.WriteLine("Please enter the space(index) you would like to empty.");
 
-            int index = ReadInt();
+            int index = Menu.ReadInt();
 
             if (index <= 0)
             {
@@ -133,16 +133,6 @@ namespace ProjectArbete
             }
         }
 
-        public static int ReadInt()
-        {
-            int number;
-            while (int.TryParse(Console.ReadLine(), out number) == false)
-            {
-                Console.WriteLine("Not a valid option, please try again!");
-            }
-            return number;
-        }
-
         public void ReadMotorCycle()
         {
             Console.WriteLine("Write registration number: ");
@@ -152,7 +142,7 @@ namespace ProjectArbete
             motorBike.WeightClass = Console.ReadLine().ToLower();
 
             Console.WriteLine("How many seats?");
-            motorBike.Seats = ReadInt();
+            motorBike.Seats = Menu.ReadInt();
 
             Console.WriteLine("What color? ");
             motorBike.Color = Console.ReadLine().ToLower();
@@ -226,7 +216,7 @@ namespace ProjectArbete
             }
 
             Console.WriteLine("Number of seats: ");
-            buss.Seats = ReadInt();
+            buss.Seats = Menu.ReadInt();
 
             listOfVehicle.Add(new Buss(buss.DubbelDecker, buss.Seats, buss.RegNumber, buss.Color, buss.Brand, "buss", 8));
         }
@@ -243,7 +233,7 @@ namespace ProjectArbete
             newCar.Brand = Console.ReadLine();
 
             Console.WriteLine("Please enter number of seats: ");
-            newCar.NumberOfSeats = ReadInt();
+            newCar.NumberOfSeats = Menu.ReadInt();
 
             Console.WriteLine("Is it a station wagon? y/n");
             string combi = Console.ReadLine();
@@ -274,7 +264,7 @@ namespace ProjectArbete
             newMoped.MopedClass = Console.ReadLine().ToLower();
 
             Console.WriteLine("How many seats?");
-            newMoped.Seats = ReadInt();
+            newMoped.Seats = Menu.ReadInt();
 
             Console.WriteLine("What color? ");
             newMoped.Color = Console.ReadLine().ToLower();

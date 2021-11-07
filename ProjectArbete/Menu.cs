@@ -172,7 +172,7 @@ namespace ProjectArbete
             }
         }
 
-        static int ReadInt()
+        public static int ReadInt()
         {
             int number;
             while (int.TryParse(Console.ReadLine(), out number) == false)
