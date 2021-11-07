@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ProjectArbete
 {
-    public class Garage : IEnumerable<IVehicle>
+    public class Garage : IEnumerable<Vehicle>
     {
         public Car newCar = new();
         public Moped newMoped = new();
@@ -14,9 +14,9 @@ namespace ProjectArbete
         public Truck truck = new();
         public Buss buss = new();
 
-        public IEnumerator<IVehicle> GetEnumerator()
+        public IEnumerator<Vehicle> GetEnumerator()
         {
-            return ((IEnumerable<IVehicle>)listOfVehicle).GetEnumerator();
+            return ((IEnumerable<Vehicle>)listOfVehicle).GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
