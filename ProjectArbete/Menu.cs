@@ -11,7 +11,7 @@ namespace ProjectArbete
         private static bool loop;
         private static int choice;
 
-        readonly static Garage garage = new();
+        readonly static Garage garage = new(30);
 
         public static void Run()
         {
@@ -184,6 +184,12 @@ namespace ProjectArbete
 
         public static void AddVehicle()
         {
+            if (garage.listOfVehicle.Count() >= garage.MaxLimit)
+            {
+                Console.WriteLine("Garage limit reached.");
+                Console.ReadKey();
+                return;
+            }
             Console.WriteLine("What kind of vehicle would you like to add?" +
                 "\n1. Moped " +
                 "\n2. Motorcycle " +

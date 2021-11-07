@@ -14,6 +14,12 @@ namespace ProjectArbete
         public Truck truck = new();
         public Buss buss = new();
 
+        public int MaxLimit { get; set; }
+        public Garage(int maxLimit)
+        {
+            MaxLimit = maxLimit;
+        }
+
         public IEnumerator<Vehicle> GetEnumerator()
         {
             return ((IEnumerable<Vehicle>)listOfVehicle).GetEnumerator();
