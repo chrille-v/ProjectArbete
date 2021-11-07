@@ -33,7 +33,7 @@ namespace ProjectArbete
             {
                 //Console.WriteLine("Number of seats: {0}", item.NumberOfSeats);
                 //Console.WriteLine("Is it combi: \t{0}", item.Combi);
-                Console.WriteLine("Reg number: \t{0}", item.RegNumber);
+                Console.WriteLine("Reg number: \t{0}\n", item.RegNumber.ToUpper());
                 Console.WriteLine("Color: \t \t{0}", item.Color);
                 Console.WriteLine("Brand: \t \t{0}", item.Brand);
                 Console.WriteLine("Type: \t \t{0}", item.Type);
