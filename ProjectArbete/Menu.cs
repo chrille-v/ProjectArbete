@@ -94,7 +94,7 @@ namespace ProjectArbete
             {
                 // registration number
                 case 1:
-                    Console.WriteLine(garage.SearchVehicle());
+                    garage.SearchVehicle();
                     Console.ReadKey();
                     break;
                 // Color
