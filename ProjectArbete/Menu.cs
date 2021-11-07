@@ -12,7 +12,6 @@ namespace ProjectArbete
         private static int choice;
 
         readonly static Garage garage = new();
-        //readonly static Vehicle newVehicle = new();
 
         public static void Run()
         {
