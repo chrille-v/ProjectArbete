@@ -74,11 +74,12 @@ namespace ProjectArbete
             Console.Clear();
             Console.WriteLine("========= Search Garage ==========");
             Console.WriteLine("Find a vehicle in the garage by adding a parameter." + 
-                "\n1. To find with a registration number." +
-                "\n2. To find all with colour." +
-                "\n3. To find all with a specified number of wheels." + 
-                "\n4. To find all with a max number of passengers."+ 
-                "\n5. To find all with combi" +
+                "\n1. Find with registration number." +
+                "\n2. Find all with colour." +
+                "\n3. Find all with a specified number of wheels." + 
+                "\n4. Search by brand."+ 
+                "\n5. Find all station wagons." +
+                "\n6. Find trucks." +
                 "\n0. Exit");
             
             SubMenu();
@@ -105,6 +106,7 @@ namespace ProjectArbete
                     foreach (var item in byColor)
                     {
                         Console.WriteLine("Reg. number: {0} \n Type: {1}", item.RegNumber, item.Type);
+                        Console.WriteLine();
                     }
                     Console.ReadKey();
                     break;
@@ -118,6 +120,7 @@ namespace ProjectArbete
                     foreach (var item in byWheels)
                     {
                         Console.WriteLine("Reg. number: {0} \n Type: {1}", item.RegNumber, item.Type);
+                        Console.WriteLine();
                     }
                     Console.ReadKey();
                     break;
@@ -130,11 +133,37 @@ namespace ProjectArbete
                     foreach (var item in byBrand)
                     {
                         Console.WriteLine("Reg. number: {0} \n Type: {1}", item.Brand, item.Type);
+                        Console.WriteLine();
                     }
                     Console.ReadKey();
                     break;
                 // Search by feature
                 case 5:
+                    Console.WriteLine("Station wagons: ");
+
+                    foreach (var item in garage.listOfVehicle)
+                    {
+                        Car car2 = item as Car;
+                        if (car2 != null)
+                        {
+                            Console.WriteLine("Reg. number: {0} \nType: {1} \nBrand:{2}", item.Brand, item.Type, item.Brand);
+                            Console.WriteLine();
+                        }
+                    }
+                    break;
+
+                case 6:
+                    Console.WriteLine("Trucks: ");
+
+                    foreach (var item in garage.listOfVehicle)
+                    {
+                        Truck truck2 = item as Truck;
+                        if (truck2 != null)
+                        {
+                            Console.WriteLine("Reg. number: {0} \nType: {1} \nBrand:{2}", item.Brand, item.Type, item.Brand);
+                            Console.WriteLine();
+                        }
+                    }
                     break;
 
                 default:

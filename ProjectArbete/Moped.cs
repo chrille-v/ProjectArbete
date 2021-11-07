@@ -31,7 +31,7 @@ namespace ProjectArbete
             get { return mopedClass; }
             set
             {
-                if (value == "Class1" || value == "Class2")
+                if (value == "class1" || value == "class2")
                 {
                     mopedClass = value;
                 }
