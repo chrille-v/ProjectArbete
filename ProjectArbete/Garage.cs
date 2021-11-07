@@ -25,6 +25,9 @@ namespace ProjectArbete
         }
 
         public List<IVehicle> listOfVehicle = new();
+        /// <summary>
+        /// Writes out all vehicles in garage.
+        /// </summary>
         public void ListVehicle()
         {
             Console.WriteLine("These are the vehicles currently in the garage: ");
@@ -92,7 +95,9 @@ namespace ProjectArbete
 
             Console.WriteLine("Trucks: {0}\nBusses: {1}", trucks, busses);
         }
-
+        /// <summary>
+        /// Removes a vehicles at index.
+        /// </summary>
         public void RemoveVehicle()
         {
             Console.WriteLine("Please enter the space(index) you would like to empty.");

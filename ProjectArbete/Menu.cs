@@ -106,6 +106,7 @@ namespace ProjectArbete
                     foreach (var item in byColor)
                     {
                         Console.WriteLine("Reg. number: {0} \n Type: {1}", item.RegNumber, item.Type);
+                        Console.WriteLine();
                     }
                     Console.ReadKey();
                     break;
@@ -119,6 +120,7 @@ namespace ProjectArbete
                     foreach (var item in byWheels)
                     {
                         Console.WriteLine("Reg. number: {0} \n Type: {1}", item.RegNumber, item.Type);
+                        Console.WriteLine();
                     }
                     Console.ReadKey();
                     break;
@@ -131,6 +133,7 @@ namespace ProjectArbete
                     foreach (var item in byBrand)
                     {
                         Console.WriteLine("Reg. number: {0} \n Type: {1}", item.Brand, item.Type);
+                        Console.WriteLine();
                     }
                     Console.ReadKey();
                     break;
@@ -144,6 +147,7 @@ namespace ProjectArbete
                         if (car2 != null)
                         {
                             Console.WriteLine("Reg. number: {0} \nType: {1} \nBrand:{2}", item.Brand, item.Type, item.Brand);
+                            Console.WriteLine();
                         }
                     }
                     break;
@@ -157,6 +161,7 @@ namespace ProjectArbete
                         if (truck2 != null)
                         {
                             Console.WriteLine("Reg. number: {0} \nType: {1} \nBrand:{2}", item.Brand, item.Type, item.Brand);
+                            Console.WriteLine();
                         }
                     }
                     break;
