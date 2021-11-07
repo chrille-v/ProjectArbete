@@ -54,7 +54,7 @@ namespace ProjectArbete
                 if (item is Truck truck2)
                 {
                     Console.WriteLine("Weight class: {0}", truck2.WeightClass);
-                    Console.WriteLine("Truck bed: {0}", truck2.TruckBed);
+                    Console.WriteLine("Truck bed: {0}", truck2.TruckBed.ToString());
                 }
 
                 if (item is Buss buss2)
