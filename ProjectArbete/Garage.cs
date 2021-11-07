@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ProjectArbete
 {
-    public class Garage : IEnumerable<Vehicle>
+    public class Garage : IEnumerable<IVehicle>
     {
         public Car newCar = new();
         public Moped newMoped = new();
@@ -14,9 +14,9 @@ namespace ProjectArbete
         public Truck truck = new();
         public Buss buss = new();
 
-        public IEnumerator<Vehicle> GetEnumerator()
+        public IEnumerator<IVehicle> GetEnumerator()
         {
-            return ((IEnumerable<Vehicle>)listOfVehicle).GetEnumerator();
+            return ((IEnumerable<IVehicle>)listOfVehicle).GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -24,7 +24,7 @@ namespace ProjectArbete
             return ((IEnumerable)listOfVehicle).GetEnumerator();
         }
 
-        public List<Vehicle> listOfVehicle = new();
+        public List<IVehicle> listOfVehicle = new();
         public void ListVehicle()
         {
             Console.WriteLine("These are the vehicles currently in the garage: ");
@@ -58,12 +58,9 @@ namespace ProjectArbete
             int trucks = listOfVehicle.Count(x => x.Type == "truck");
             int busses = listOfVehicle.Count(x => x.Type == "buss");
 
-            Console.WriteLine("Mopeds: {0}", mopeds);
-            Console.WriteLine("Motorcycles: {0}", motorcycles);
+            Console.WriteLine("Mopeds: {0} \nMotorcycles: {1}\nCars: {2}", mopeds, motorcycles, cars);
 
-            Console.WriteLine("Cars: {0}", cars);
-            Console.WriteLine("Trucks: {0}", trucks);
-            Console.WriteLine("Busses: {0}", busses);
+            Console.WriteLine("Trucks: {0}\nBusses: {1}", trucks, busses);
         }
 
         public void RemoveVehicle()
@@ -181,8 +178,8 @@ namespace ProjectArbete
             Console.WriteLine("Enter brand:");
             buss.Brand = Console.ReadLine();
 
-            Console.WriteLine("Is it a dubbeldecker?");
-            string dubbelDecker = Console.ReadLine();
+            Console.WriteLine("Is it a dubbeldecker? y/n");
+            string dubbelDecker = Console.ReadLine().ToLower();
 
             switch (dubbelDecker)
             {

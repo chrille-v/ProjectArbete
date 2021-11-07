@@ -7,9 +7,10 @@ namespace ProjectArbete
 {
     public interface IVehicle
     {
-        public void ListVehicle();
-        public void ListTypeVehicle();
-        public void AddVehicle();
-        public void RemoveVehicle();
+        public string Brand { get; set; }
+        public string Color { get; set; }
+        public int NumberOfTires { get; set; }
+        public string RegNumber { get; set; }
+        public string Type{ get; set; }
     }
 }
