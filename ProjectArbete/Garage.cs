@@ -118,23 +118,18 @@ namespace ProjectArbete
         /// <summary>
         /// Searches Vehicles for reg.nr, and gives true or false.
         /// </summary>
-        public bool SearchVehicle()
+        public void SearchVehicle()
         {
             Console.WriteLine("Search for registration number to see if that vehicle is parked in the garage ");
             string searchRegNumber = Console.ReadLine();
 
-            //var result = listOfVehicle.Where(x => x.RegNumber == searchRegNumber).ToList();
-            bool result = listOfVehicle.Any(x => x.RegNumber == searchRegNumber);
+            var result = listOfVehicle.Where(x => x.RegNumber == searchRegNumber).ToList();
 
-            if (result)
+            foreach (var item in result)
             {
-                Console.WriteLine("{0} There is one vehicle with that registration number.", result.ToString());
-                return true;
-            }
-            else
-            {
-                Console.WriteLine("{0} No such vehicle in the garage. ", result.ToString());
-                return false;
+                Console.WriteLine("Color: \t \t{0}", item.Color);
+                Console.WriteLine("Brand: \t \t{0}", item.Brand);
+                Console.WriteLine("Type: \t \t{0}", item.Type);
             }
         }
 
