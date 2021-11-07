@@ -14,6 +14,7 @@
       <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAwAAgAABAAA=</HashCode>
       <FileName>Vehicle.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ProjectArbete.Moped">
     <Position X="5.25" Y="8" Width="1.75" />
@@ -60,7 +61,7 @@
   <Interface Name="ProjectArbete.IVehicle">
     <Position X="5.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAAAAAAAAAAAAAAAAIAAAAAAAAAAAgEAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAwAAgAABAAA=</HashCode>
       <FileName>IVehicle.cs</FileName>
     </TypeIdentifier>
   </Interface>
