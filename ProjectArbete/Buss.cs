@@ -7,7 +7,19 @@ namespace ProjectArbete
 {
     public class Buss : Vehicle
     {
-        public int NumberOfSeats { get; set; }
-        public int NumbearOfTires { get; set; }
+        public bool DubbelDecker { get; set; }
+        public int Seats { get; set; }
+
+        public Buss()
+        {
+
+        }
+
+        public Buss(bool dubbelDecker, int _seats, string _regnumber, string _color, string _brand, string _type, int _nrTires)
+            : base(_regnumber, _color, _brand, _type, _nrTires)
+        {
+            DubbelDecker = dubbelDecker;
+            Seats = _seats;
+        }
     }
 }
