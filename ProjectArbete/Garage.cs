@@ -19,7 +19,7 @@ namespace ProjectArbete
         {
             MaxLimit = maxLimit;
         }
-
+        // It works!! It's alive!
         public IEnumerator<Vehicle> GetEnumerator()
         {
             return ((IEnumerable<Vehicle>)listOfVehicle).GetEnumerator();
@@ -30,87 +30,19 @@ namespace ProjectArbete
             return ((IEnumerable)listOfVehicle).GetEnumerator();
         }
 
-        public List<IVehicle> listOfVehicle = new();
-        /// <summary>
-        /// Writes out all vehicles in garage.
-        /// </summary>
-        public void ListVehicle()
-        {
-            Console.WriteLine("These are the vehicles currently in the garage: ");
-            
-            foreach (IVehicle item in listOfVehicle)
-            {
-                // Pattern matching or 'as' with null check? 
-                //Car car2 = item as Car;
-                if (item is Car car2)
-                {
-                    Console.WriteLine("Station wagon: {0}", car2.Combi.ToString());
-                    Console.WriteLine("Seats: \t \t{0}", car2.NumberOfSeats);
-                }
+        public List<Vehicle> listOfVehicle = new();
 
-                if (item is Moped moped2)
-                {
-                    Console.WriteLine("Moped class: {0}", moped2.MopedClass);
-                    Console.WriteLine("Seats: \t \t{0}", moped2.Seats);
-                }
-
-                if (item is MotorCycle motorCycle2)
-                {
-                    Console.WriteLine("Seats: {0}", motorCycle2.Seats);
-                    Console.WriteLine("Weight class: {0}", motorCycle2.WeightClass);
-                }
-
-                if (item is Truck truck2)
-                {
-                    Console.WriteLine("Weight class: {0}", truck2.WeightClass);
-                    Console.WriteLine("Truck bed: {0}", truck2.TruckBed.ToString());
-                }
-
-                if (item is Buss buss2)
-                {
-                    Console.WriteLine("Dubbel decker: {0}", buss2.DubbelDecker);
-                    Console.WriteLine("Seats: {0}", buss2.Seats);
-                }
-
-                Console.WriteLine("Reg number: \t{0}", item.RegNumber);
-                Console.WriteLine("Color: \t \t{0}", item.Color);
-                Console.WriteLine("Brand: \t \t{0}", item.Brand);
-                Console.WriteLine("Type: \t \t{0}", item.Type);
-
-                Console.WriteLine();
-            }
-        }
-        /// <summary>
-        /// List the different types of vehicles currently in 
-        /// the garage, and how many of each.
-        /// </summary>
-        public void ListTypeVehicle()
-        {
-            int totalVehicles = listOfVehicle.Count;
-
-            Console.WriteLine("Vehicles currently in the garage: {0}", totalVehicles);
-
-            int mopeds = listOfVehicle.Count(x => x.Type == "moped");
-            int motorcycles = listOfVehicle.Count(x => x.Type == "motorcycle");
-
-            int cars = listOfVehicle.Count(x => x.Type == "car");
-            int trucks = listOfVehicle.Count(x => x.Type == "truck");
-            int busses = listOfVehicle.Count(x => x.Type == "buss");
-
-            Console.WriteLine("Mopeds: {0} \nMotorcycles: {1}\nCars: {2}", mopeds, motorcycles, cars);
-
-            Console.WriteLine("Trucks: {0}\nBusses: {1}", trucks, busses);
-        }
         /// <summary>
         /// Removes a vehicles at index.
         /// </summary>
         public void RemoveVehicle()
         {
-            Console.WriteLine("Please enter the space(index) you would like to empty.");
+            Console.WriteLine("Please enter the space(index) you would like to remove.");
 
             int index = Menu.ReadInt();
 
-            if (index <= 0)
+            bool isEmpty = !listOfVehicle.Any();
+            if (index <= 0 || isEmpty)
             {
                 Console.WriteLine("No such space");
                 Console.ReadLine();
@@ -118,24 +50,6 @@ namespace ProjectArbete
             else
             {
                 listOfVehicle.RemoveAt(index - 1);
-            }
-            
-        }
-        /// <summary>
-        /// Searches Vehicles for reg.nr.
-        /// </summary>
-        public void SearchVehicle()
-        {
-            Console.WriteLine("Search for registration number to see if that vehicle is parked in the garage ");
-            string searchRegNumber = Console.ReadLine();
-
-            var result = listOfVehicle.Where(x => x.RegNumber == searchRegNumber).ToList();
-
-            foreach (var item in result)
-            {
-                Console.WriteLine("Color: \t \t{0}", item.Color);
-                Console.WriteLine("Brand: \t \t{0}", item.Brand);
-                Console.WriteLine("Type: \t \t{0}", item.Type);
             }
         }
 
@@ -171,10 +85,10 @@ namespace ProjectArbete
             truck.Brand = Console.ReadLine();
 
             Console.WriteLine("Please enter weightclass: light/middle/heavy");
-            truck.WeightClass = Console.ReadLine();
+            truck.WeightClass = Console.ReadLine().ToLower();
 
             Console.WriteLine("Does it have a truckbed? y/n");
-            string truckBed = Console.ReadLine();
+            string truckBed = Console.ReadLine().ToLower();
 
             switch (truckBed)
             {
@@ -217,7 +131,7 @@ namespace ProjectArbete
                     buss.DubbelDecker = false;
                     break;
                 default:
-                    Console.WriteLine("Please answer yes or no.");
+                    Console.WriteLine("Please answer y/n.");
                     break;
             }
 
@@ -242,7 +156,7 @@ namespace ProjectArbete
             newCar.NumberOfSeats = Menu.ReadInt();
 
             Console.WriteLine("Is it a station wagon? y/n");
-            string combi = Console.ReadLine();
+            string combi = Console.ReadLine().ToLower();
 
             switch (combi)
             {

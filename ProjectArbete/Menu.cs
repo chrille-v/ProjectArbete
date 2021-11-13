@@ -37,12 +37,12 @@ namespace ProjectArbete
                         break;
 
                     case 4:
-                        garage.ListVehicle();
+                        ListVehicle();
                         Console.ReadKey();
                         break;
 
                     case 5:
-                        garage.ListTypeVehicle();
+                        ListTypeVehicle();
                         Console.ReadKey();
                         break;
 
@@ -72,53 +72,54 @@ namespace ProjectArbete
         {
             Console.Clear();
             Console.WriteLine("========= Search Garage ==========");
-            Console.WriteLine("Find a vehicle in the garage by adding a parameter." + 
-                "\n1. Find with registration number." +
-                "\n2. Find all with colour." +
-                "\n3. Find all with a specified number of wheels." + 
-                "\n4. Search by brand."+ 
+            Console.WriteLine("Find a vehicle in the garage by adding a parameter." +
+                "\n1. Search registration number." +
+                "\n2. Search by color." +
+                "\n3. Find all with a specified number of wheels." +
+                "\n4. Search by brand." +
                 "\n5. Find all station wagons." +
                 "\n6. Find trucks." +
                 "\n0. Exit");
-            
-            SubMenu();
             Console.WriteLine("=======================================");
+
+            SubMenu();
         }
 
         private static void SubMenu()
         {
             choice = ReadInt();
-
+            // Hurray for lambda! :)
             switch (choice)
             {
                 // registration number
                 case 1:
-                    garage.SearchVehicle();
+                    SearchVehicle();
                     Console.ReadKey();
                     break;
                 // Color
                 case 2:
                     Console.WriteLine("Enter color: ");
                     string color = Console.ReadLine();
-                    var byColor = garage.listOfVehicle.Where(x => x.Color == color);
+
+                    var byColor = garage.Where(x => x.Color == color);
 
                     foreach (var item in byColor)
                     {
-                        Console.WriteLine("Reg. number: {0} \n Type: {1}", item.RegNumber, item.Type);
+                        Console.WriteLine("Reg. number: {0} \nType: {1}", item.RegNumber.ToUpper(), item.Type);
                         Console.WriteLine();
                     }
                     Console.ReadKey();
                     break;
-                    
+
                 // number of wheels
                 case 3:
                     Console.WriteLine("Enter number of wheels: ");
                     int wheels = ReadInt();
-                    var byWheels = garage.listOfVehicle.Where(x => x.NumberOfTires == wheels);
+                    var byWheels = garage.Where(x => x.NumberOfTires == wheels);
 
                     foreach (var item in byWheels)
                     {
-                        Console.WriteLine("Reg. number: {0} \n Type: {1}", item.RegNumber, item.Type);
+                        Console.WriteLine("Reg. number: {0} \nType: {1}", item.RegNumber.ToUpper(), item.Type);
                         Console.WriteLine();
                     }
                     Console.ReadKey();
@@ -127,11 +128,12 @@ namespace ProjectArbete
                 case 4:
                     Console.WriteLine("Brand: ");
                     string brand = Console.ReadLine();
-                    var byBrand = garage.listOfVehicle.Where(x => x.Brand == brand);
+
+                    var byBrand = garage.Where(x => x.Brand == brand);
 
                     foreach (var item in byBrand)
                     {
-                        Console.WriteLine("Reg. number: {0} \n Type: {1}", item.Brand, item.Type);
+                        Console.WriteLine("Reg. number: {0} \nType: {1}", item.RegNumber.ToUpper(), item.Type);
                         Console.WriteLine();
                     }
                     Console.ReadKey();
@@ -140,12 +142,12 @@ namespace ProjectArbete
                 case 5:
                     Console.WriteLine("Station wagons: ");
 
-                    foreach (var item in garage.listOfVehicle)
+                    foreach (var item in garage)
                     {
                         //Car car2 = item as Car;
                         if (item is Car car2)
                         {
-                            Console.WriteLine("Reg. number: {0} \nType: {1} \nBrand:{2}", item.RegNumber, item.Type, item.Brand);
+                            Console.WriteLine("Reg. number: {0} \nType: {1} \nBrand:{2}", item.RegNumber.ToUpper(), item.Type, item.Brand);
                             Console.WriteLine();
                         }
                     }
@@ -155,12 +157,12 @@ namespace ProjectArbete
                 case 6:
                     Console.WriteLine("Trucks: ");
 
-                    foreach (var item in garage.listOfVehicle)
+                    foreach (var item in garage)
                     {
                         //Truck truck2 = item as Truck;
                         if (item is Truck truck2)
                         {
-                            Console.WriteLine("Reg. number: {0} \nType: {1} \nBrand:{2}", item.Brand, item.Type, item.Brand);
+                            Console.WriteLine("Reg. number: {0} \nType: {1} \nBrand:{2}", item.RegNumber.ToUpper(), item.Type, item.Brand);
                             Console.WriteLine();
                         }
                     }
@@ -171,7 +173,10 @@ namespace ProjectArbete
                     break;
             }
         }
-
+        /// <summary>
+        /// Parse string input to an int.
+        /// </summary>
+        /// <returns></returns>
         public static int ReadInt()
         {
             int number;
@@ -181,10 +186,12 @@ namespace ProjectArbete
             }
             return number;
         }
-
+        /// <summary>
+        /// Adds a vehicle to garage
+        /// </summary>
         public static void AddVehicle()
         {
-            if (garage.listOfVehicle.Count() >= garage.MaxLimit)
+            if (garage.Count() >= garage.MaxLimit)
             {
                 Console.WriteLine("Garage limit reached.");
                 Console.ReadKey();
@@ -199,6 +206,7 @@ namespace ProjectArbete
                 "\n0. Go back");
 
             int choice = ReadInt();
+
             switch (choice)
             {
                 case 1:
@@ -226,6 +234,91 @@ namespace ProjectArbete
                 default:
                     break;
             }
+        }
+        /// <summary>
+        /// Searches for registration number.
+        /// </summary>
+        public static void SearchVehicle()
+        {
+            Console.WriteLine("Search for registration number to see if that vehicle is parked in the garage ");
+            string searchRegNumber = Console.ReadLine();
+
+            var result = garage.Where(x => x.RegNumber == searchRegNumber).ToList();
+
+            foreach (var item in result)
+            {
+                Console.WriteLine("Color: \t \t{0}", item.Color);
+                Console.WriteLine("Brand: \t \t{0}", item.Brand);
+                Console.WriteLine("Type: \t \t{0}", item.Type);
+            }
+        }
+        /// <summary>
+        /// Prints out all vehicles in garage
+        /// </summary>
+        public static void ListVehicle()
+        {
+            Console.WriteLine("These are the vehicles currently in the garage: ");
+
+            foreach (Vehicle item in garage)
+            {
+                // Pattern matching or 'as' with null check? First one.
+                // Car car2 = item as Car;
+                if (item is Car car2)
+                {
+                    Console.WriteLine("Station wagon: {0}", car2.Combi.ToString());
+                    Console.WriteLine("Seats: \t \t{0}", car2.NumberOfSeats);
+                }
+
+                if (item is Moped moped2)
+                {
+                    Console.WriteLine("Moped class: {0}", moped2.MopedClass);
+                    Console.WriteLine("Seats: \t \t{0}", moped2.Seats);
+                }
+
+                if (item is MotorCycle motorCycle2)
+                {
+                    Console.WriteLine("Weight class:   {0}", motorCycle2.WeightClass);
+                    Console.WriteLine("Seats: \t \t{0}", motorCycle2.Seats);
+                }
+
+                if (item is Truck truck2)
+                {
+                    Console.WriteLine("Weight class:   {0}", truck2.WeightClass);
+                    Console.WriteLine("Truck bed: \t{0}", truck2.TruckBed.ToString());
+                }
+
+                if (item is Buss buss2)
+                {
+                    Console.WriteLine("Dubbel decker: {0}", buss2.DubbelDecker);
+                    Console.WriteLine("Seats: \t \t{0}", buss2.Seats);
+                }
+
+                Console.WriteLine("Reg number: \t{0}", item.RegNumber.ToUpper());
+                Console.WriteLine("Color: \t \t{0}", item.Color);
+                Console.WriteLine("Brand: \t \t{0}", item.Brand);
+                Console.WriteLine("Type: \t \t{0}", item.Type);
+
+                Console.WriteLine();
+            }
+        }
+
+        public static void ListTypeVehicle()
+        {
+            // Lambda lambda lambda :D
+            int totalVehicles = garage.Count();
+
+            int mopeds = garage.Count(x => x.Type == "moped");
+            int motorcycles = garage.Count(x => x.Type == "motorcycle");
+
+            int cars = garage.Count(x => x.Type == "car");
+            int trucks = garage.Count(x => x.Type == "truck");
+            int busses = garage.Count(x => x.Type == "buss");
+
+            Console.WriteLine("Vehicles currently in the garage: {0}", totalVehicles);
+
+            Console.WriteLine("Mopeds: {0} \nMotorcycles: {1}\nCars: {2}", mopeds, motorcycles, cars);
+
+            Console.WriteLine("Trucks: {0}\nBusses: {1}", trucks, busses);
         }
     }
 }

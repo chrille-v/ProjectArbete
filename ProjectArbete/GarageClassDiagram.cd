@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ProjectArbete.Garage">
-    <Position X="1.75" Y="2.5" Width="1.5" />
+    <Position X="5.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAMEAAAIAAAABBCASAAAIAAAAAEAEAEAAMAAAAAAQA=</HashCode>
+      <HashCode>QAAMEAAAIAAAABBCASAAAAAAAAAEAEAEAAAAAAAAAQA=</HashCode>
       <FileName>Garage.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -38,7 +38,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.MotorCycle">
-    <Position X="10.5" Y="8" Width="1.75" />
+    <Position X="10.25" Y="8" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAAAAAAgAAAAIAAAAAAAABAAAAAAAAAAA=</HashCode>
       <FileName>MotorCycle.cs</FileName>
@@ -52,14 +52,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ProjectArbete.Menu">
-    <Position X="7.25" Y="4" Width="1.5" />
+    <Position X="7.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAABAAACAAAAAJQAAAIAAAAAQAAAgAAAAAAAAI=</HashCode>
+      <HashCode>AAAAAAAABAAACAAAAAJQAIAIAAAAAQAAAgMAAAAAAAI=</HashCode>
       <FileName>Menu.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="ProjectArbete.IVehicle">
-    <Position X="5.5" Y="5.25" Width="1.5" />
+    <Position X="1.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAwAAgAABAAA=</HashCode>
       <FileName>IVehicle.cs</FileName>
