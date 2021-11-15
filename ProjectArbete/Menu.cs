@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 
 namespace ProjectArbete
 {
@@ -11,12 +12,12 @@ namespace ProjectArbete
         private static bool loop;
         private static int choice;
 
-        readonly static Garage garage = new(30);
+        readonly static Garage garage = new Garage(30);
 
         public static void Run()
         {
             loop = true;
-
+            ReadFileToGarage();
             do
             {
                 PrintOutMenu();
@@ -47,6 +48,7 @@ namespace ProjectArbete
                         break;
 
                     case 0:
+                        Save();
                         Console.WriteLine("Thank you, now exiting the program!");
                         loop = false;
                         break;
@@ -229,6 +231,8 @@ namespace ProjectArbete
                     break;
 
                 case 0:
+
+
                     break;
 
                 default:
@@ -320,5 +324,90 @@ namespace ProjectArbete
 
             Console.WriteLine("Trucks: {0}\nBusses: {1}", trucks, busses);
         }
+
+        public static void Save()
+        {
+            StreamWriter streamWriter = null;
+            try
+            {
+                streamWriter = new StreamWriter(@"c:\file.txt", false, Encoding.UTF8);
+                foreach (Vehicle item in garage)
+                {
+                    if (item is Car car2)
+                    {
+                        streamWriter.Write(car2.Combi.ToString()+" "+ car2.NumberOfSeats);
+                    }
+
+                    if (item is Moped moped2)
+                    {
+                        streamWriter.Write(moped2.MopedClass + " " + moped2.Seats);
+                    }
+
+                    if (item is MotorCycle motorCycle2)
+                    {
+                        streamWriter.Write(motorCycle2.WeightClass+" "+ motorCycle2.Seats);
+                    }
+
+                    if (item is Truck truck2)
+                    {
+                        streamWriter.Write(truck2.WeightClass+" "+ truck2.TruckBed.ToString());
+                    }
+
+                    if (item is Buss buss2)
+                    {
+                        streamWriter.Write(buss2.DubbelDecker+" "+ buss2.Seats);
+                    }
+
+                    streamWriter.WriteLine(" "+item.RegNumber.ToUpper()+" "+ item.Color+" "+ item.Brand+" "+ item.Type);
+                }
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Error");
+            }
+            finally
+            {
+                if (streamWriter != null)
+                {
+                    Console.WriteLine("data is saved...");
+                }
+                streamWriter.Close();
+            }
+        }
+
+        public static void ReadFileToGarage()
+        {
+            StreamReader reader = null;
+            try
+            {
+                reader = new StreamReader(@"c:\file.txt");
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    string[] fields = line.Split(' ');
+                    switch (fields[5])
+                    {
+                        case "car":
+                            garage.listOfVehicle.Add(new Car(Convert.ToInt32(fields[1]),Convert.ToBoolean(fields[0]), fields[2], fields[3], fields[4], fields[5],0));
+                            break;
+                        case "buss":
+                            garage.listOfVehicle.Add(new Buss(Convert.ToBoolean(fields[0]),Convert.ToInt32(fields[1]), fields[2], fields[3], fields[4], fields[5], 0));
+                            break;
+                        
+                   }
+                }
+            }
+            catch (Exception exp)
+            {
+                Console.WriteLine(exp.Message);
+            }
+            finally
+            {
+                reader.Close();
+            }
+        }
+
+
+
     }
 }
