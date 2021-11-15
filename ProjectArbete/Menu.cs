@@ -324,7 +324,8 @@ namespace ProjectArbete
 
             Console.WriteLine("Trucks: {0}\nBusses: {1}", trucks, busses);
         }
-
+        //****************//
+        //Save method to save garage in to txt.file
         public static void Save()
         {
             StreamWriter streamWriter = null;
@@ -374,7 +375,8 @@ namespace ProjectArbete
                 streamWriter.Close();
             }
         }
-
+        //**************************
+        //ead method to load save file
         public static void ReadFileToGarage()
         {
             StreamReader reader = null;
