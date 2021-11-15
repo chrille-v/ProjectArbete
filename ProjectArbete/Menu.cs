@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +48,7 @@ namespace ProjectArbete
                         break;
 
                     case 0:
+                        Save();
                         Console.WriteLine("Thank you, now exiting the program!");
                         loop = false;
                         break;
