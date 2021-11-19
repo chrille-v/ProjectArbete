@@ -322,7 +322,8 @@ namespace ProjectArbete
 
             Console.WriteLine("Trucks: {0}\nBusses: {1}", trucks, busses);
         }
-
+        //****************//
+        //Save method to save garage in to txt.file
         public static void Save()
         {
             StreamWriter streamWriter = null;
@@ -372,7 +373,8 @@ namespace ProjectArbete
                 streamWriter.Close();
             }
         }
-
+        //**************************
+        //ead method to load save file
         public static void ReadFileToGarage()
         {
             StreamReader reader = null;
@@ -386,13 +388,24 @@ namespace ProjectArbete
                     switch (fields[5])
                     {
                         case "car":
-                            garage.listOfVehicle.Add(new Car(Convert.ToInt32(fields[1]),Convert.ToBoolean(fields[0]), fields[2], fields[3], fields[4], fields[5],0));
+                            garage.listOfVehicle.Add(new Car(Convert.ToInt32(fields[1]), Convert.ToBoolean(fields[0]), fields[2], fields[3], fields[4], fields[5], 0));
                             break;
                         case "buss":
-                            garage.listOfVehicle.Add(new Buss(Convert.ToBoolean(fields[0]),Convert.ToInt32(fields[1]), fields[2], fields[3], fields[4], fields[5], 0));
+                            garage.listOfVehicle.Add(new Buss(Convert.ToBoolean(fields[0]), Convert.ToInt32(fields[1]), fields[2], fields[3], fields[4], fields[5], 0));
                             break;
-                        
-                   }
+                        case "moped":
+                            garage.listOfVehicle.Add(new Moped(fields[0], Convert.ToInt32(fields[1]), fields[2], fields[3], fields[4], fields[5], 0));
+                            break;
+                        case "motorcycle":
+                            garage.listOfVehicle.Add(new MotorCycle(fields[0], Convert.ToInt32(fields[1]), fields[2], fields[3], fields[4], fields[5], 0));
+                            break;
+                        case "truck":
+                            garage.listOfVehicle.Add(new Truck(fields[0], Convert.ToBoolean(fields[1]), fields[2], fields[3], fields[4], fields[5], 0));
+                            break;
+                        default:
+                            break;
+
+                    }
                 }
             }
             catch (Exception exp)
