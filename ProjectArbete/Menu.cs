@@ -374,7 +374,7 @@ namespace ProjectArbete
             }
         }
         //**************************
-        //ead method to load save file
+        //Read method to load save file
         public static void ReadFileToGarage()
         {
             StreamReader reader = null;
@@ -417,8 +417,5 @@ namespace ProjectArbete
                 reader.Close();
             }
         }
-
-
-
     }
 }
